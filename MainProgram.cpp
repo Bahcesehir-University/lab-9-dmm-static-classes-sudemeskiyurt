@@ -181,7 +181,7 @@ bool IntArray::add(int value) {
     //          increment count, return true.
     //          Otherwise return false.
     if(count < capacity){
-        data[count] += value;
+        data[count] = value;
         count++;
         return true;
     }
@@ -192,7 +192,7 @@ bool IntArray::add(int value) {
 int IntArray::get(int index) const {
     // TODO 11: If index is valid (0 <= index < count), return data[index].
     //          Otherwise return -1.
-    if(0 <= index && index < count){
+    if(index>=0 && index < count){
     return data[index];
 }
 return -1;}
@@ -218,7 +218,7 @@ bool IntArray::isEmpty() const {
 bool IntArray::removeLast() {
     // TODO 15: If not empty, decrement count and return true.
     //          Otherwise return false.
-    if(!isEmpty()){
+    if(count > 0){
         count--;
         return true;
     }
